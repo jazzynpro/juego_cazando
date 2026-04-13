@@ -38,6 +38,7 @@ function iniciarJuego() {
     temporizador=setInterval(restarTiempo,1000);
     graficarGato();
     graficarComida();
+    
 }
 
 function limpiarCanvas(){
@@ -81,6 +82,11 @@ function detectarColision(){
         puntaje=puntaje+1;
         mostrarEnSpan("puntos",puntaje);
         //alert("Atrapado");
+
+        if(puntaje==6){
+        clearInterval(temporizador);
+        alert("HAZ SIDO GANADOR");
+        }
     }
 }
 function aparecerComida(){
@@ -94,4 +100,22 @@ function aparecerComida(){
 function restarTiempo(){
     tiempo = tiempo - 1;
     mostrarEnSpan("tiempo",tiempo);
+    if (tiempo <= 0) {
+        clearInterval(temporizador); 
+        alert("GAME OVER");
+    }
+}
+function reiniciar(){
+    clearInterval(temporizador);
+    puntaje = 0;
+    tiempo = 10;
+    gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);
+    gatoY = (canvas.height / 2) - (ALTO_GATO / 2);
+    limpiarCanvas();
+    graficarGato();
+    aparecerComida(); //permite cambiar en aleatorio la comida
+    graficarComida();
+    mostrarEnSpan("puntos", puntaje);
+    mostrarEnSpan("tiempo", tiempo);
+    temporizador = setInterval(restarTiempo, 1000);
 }
