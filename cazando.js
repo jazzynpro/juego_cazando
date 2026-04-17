@@ -87,6 +87,7 @@ function detectarColision(){
         clearInterval(temporizador);
         alert("HAZ SIDO GANADOR");
         }
+        
     }
 }
 function aparecerComida(){
