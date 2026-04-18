@@ -25,28 +25,28 @@
 </section>
 
     <section class="panel">
-      <div class="card">
-        <span>Puntos</span>
-        <strong id="puntos">0</strong>
-      </div>
-      <div class="card">
-        <span>Tiempo</span>
-        <strong id="tiempo">10</strong>
-      </div>
-      <div class="card">
-        <button onclick="reiniciar();">Reiniciar</button>
-      </div>
-    </section>
+  <div class="card neon-card">
+    <span>Puntos</span>
+    <strong id="puntos">0</strong>
+  </div>
+  <div class="card neon-card">
+    <span>Tiempo</span>
+    <strong id="tiempo">10</strong>
+  </div>
+  <div class="card neon-card">
+    <button class="btn-reiniciar" onclick="reiniciar();">Reiniciar</button>
+  </div>
+</section>
 
-    <section class="controles">
-      <button id="btnArriba" onclick="moverArriba();">⬆</button>
+<section class="controles">
+  <button id="btnArriba" class="btn-control" onclick="moverArriba();">⬆</button>
 
-      <div class="middle-controls">
-        <button id="btnIzquierda" onclick="moverIzquierda();">⬅</button>
-        <button id="btnAbajo" onclick="moverAbajo();">⬇</button>
-        <button id="btnDerecha" onclick="moverDerecha();">➡</button>
-      </div>
-    </section>
+  <div class="middle-controls">
+    <button id="btnIzquierda" class="btn-control" onclick="moverIzquierda();">⬅</button>
+    <button id="btnAbajo" class="btn-control" onclick="moverAbajo();">⬇</button>
+    <button id="btnDerecha" class="btn-control" onclick="moverDerecha();">➡</button>
+  </div>
+</section>
 
     <p id="mensaje"></p>
 
