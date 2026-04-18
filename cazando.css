@@ -31,12 +31,16 @@ h1 {
   margin-bottom: 15px;
 }
 
+.fondo {
+  background-image: url("FondoP.png");
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  border-radius: 15px;
+}
 /* CANVAS */
 canvas {
-  background: #4fd253;
-  border-radius: 10px;
-  border: 3px solid #333;
-  margin: 15px 0;
+  background: transparent;
 }
 
 /* PANEL */
