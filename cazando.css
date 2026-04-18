@@ -1,7 +1,13 @@
 body {
   margin: 0;
+  background-image: url("FondoW.jpg");
+  background-size: cover;           
+  background-position: center;      
+  background-repeat: no-repeat;     
+  background-attachment: fixed;     
+
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: linear-gradient(135deg, #ff7e7e, #ffb199);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,15 +16,12 @@ body {
 
 /* CONTENEDOR PRINCIPAL */
 .container {
-  background: white;
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   text-align: center;
   width: 90%;
   max-width: 600px;
 }
-
 /* HEADER */
 h1 {
   margin: 0;
@@ -40,7 +43,9 @@ h1 {
 }
 /* CANVAS */
 canvas {
-  background: transparent;
+  filter: drop-shadow(0 0 10px white)
+          drop-shadow(0 0 20px #00bfff)
+          drop-shadow(0 0 25px #ffd700);
 }
 
 /* PANEL */
@@ -104,4 +109,73 @@ button:hover {
   font-size: 18px;
   font-weight: bold;
   color: #b30000;
+}
+
+/* CONTENEDOR DE ESTRELLAS */
+.shooting-stars span {
+  position: absolute;
+  top: -50px;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(white, rgba(255,255,255,0));
+  border-radius: 50%;
+  opacity: 0;
+  transform: rotate(45deg);
+  animation: caer 3s linear infinite;
+}
+
+/* CABEZA DE LA ESTRELLA ⭐ */
+.shooting-stars span::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* 🔥 al final de la línea */
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 8px white,
+    0 0 15px #00bfff,
+    0 0 20px #ffd700;
+}
+
+/* ANIMACIÓN */
+@keyframes caer {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-300px, 600px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* VARIAS ESTRELLAS (posiciones diferentes) */
+.shooting-stars span:nth-child(1) {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.shooting-stars span:nth-child(2)::after {
+  width: 8px;
+  height: 8px;
+}
+
+.shooting-stars span:nth-child(3) {
+  left: 60%;
+  animation-delay: 2s;
+}
+
+.shooting-stars span:nth-child(4)::after {
+  width: 5px;
+  height: 5px;
+}
+.shooting-stars span:nth-child(5) {
+  left: 10%;
+  animation-delay: 2.5s;
 }
