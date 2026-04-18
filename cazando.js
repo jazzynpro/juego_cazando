@@ -15,7 +15,7 @@ const ALTO_COMIDA = 30;
 //Puntaje
 let puntaje=0;
 //Tiempo
-let tiempo=10;
+let tiempo=20;
 let temporizador;
 
 
@@ -83,6 +83,8 @@ function detectarColision(){
         mostrarEnSpan("puntos",puntaje);
         //alert("Atrapado");
 
+        reinicioTiempo();
+
         if(puntaje==6){
         clearInterval(temporizador);
         alert("HAZ SIDO GANADOR");
@@ -109,13 +111,21 @@ function restarTiempo(){
 function reiniciar(){
     clearInterval(temporizador);
     puntaje = 0;
-    tiempo = 10;
+    tiempo = 20;
     gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);
     gatoY = (canvas.height / 2) - (ALTO_GATO / 2);
     limpiarCanvas();
     graficarGato();
     aparecerComida(); //permite cambiar en aleatorio la comida
     graficarComida();
+    mostrarEnSpan("puntos", puntaje);
+    mostrarEnSpan("tiempo", tiempo);
+    temporizador = setInterval(restarTiempo, 1000);
+}
+
+function reinicioTiempo(){
+    clearInterval(temporizador);
+    tiempo = 20;
     mostrarEnSpan("puntos", puntaje);
     mostrarEnSpan("tiempo", tiempo);
     temporizador = setInterval(restarTiempo, 1000);
