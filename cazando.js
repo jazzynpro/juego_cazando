@@ -4,6 +4,9 @@ let ctx = canvas.getContext("2d");
 // Gato
  let imagenGato = new Image();
 imagenGato.src = "gato.png";
+let imagenRaton = new Image();
+imagenRaton.src = "raton.png";
+
 let gatoX = 0;
 let gatoY = 0;
 const ANCHO_GATO = 50;
@@ -41,8 +44,13 @@ function graficarGato() {
 }
  
 function graficarComida() {
-    graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, "#ff0000");
-};
+    if (imagenRaton.complete) {
+        ctx.drawImage(imagenRaton, comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
+    } else {
+        // fallback por si no carga
+        graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, "#ff0000");
+    }
+}
  
 function iniciarJuego() {
     gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);
