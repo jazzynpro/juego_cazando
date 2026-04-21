@@ -15,7 +15,7 @@ const ALTO_COMIDA = 30;
 //Puntaje
 let puntaje=0;
 //Tiempo
-let tiempo=20;
+let tiempo=15;
 let temporizador;
 
 
@@ -111,7 +111,7 @@ function restarTiempo(){
 function reiniciar(){
     clearInterval(temporizador);
     puntaje = 0;
-    tiempo = 20;
+    tiempo = 10;
     gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);
     gatoY = (canvas.height / 2) - (ALTO_GATO / 2);
     limpiarCanvas();
@@ -125,7 +125,7 @@ function reiniciar(){
 
 function reinicioTiempo(){
     clearInterval(temporizador);
-    tiempo = 20;
+    tiempo = 10;
     mostrarEnSpan("puntos", puntaje);
     mostrarEnSpan("tiempo", tiempo);
     temporizador = setInterval(restarTiempo, 1000);
