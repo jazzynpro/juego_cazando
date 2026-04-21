@@ -125,7 +125,7 @@ function reiniciar(){
 
 function reinicioTiempo(){
     clearInterval(temporizador);
-    tiempo = 10;
+    tiempo = 15;
     mostrarEnSpan("puntos", puntaje);
     mostrarEnSpan("tiempo", tiempo);
     temporizador = setInterval(restarTiempo, 1000);
