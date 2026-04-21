@@ -3,7 +3,7 @@ let ctx = canvas.getContext("2d");
 
 // Gato
  let imagenGato = new Image();
-imagenGato.src = "ggato.png";
+imagenGato.src = "gato.png";
 let gatoX = 0;
 let gatoY = 0;
 const ANCHO_GATO = 50;
