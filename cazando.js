@@ -18,6 +18,8 @@ let puntaje=0;
 let tiempo=15;
 let temporizador;
 
+let tiempoInicial=15;
+
 
 function graficarRectangulo(x, y, ancho, alto, color) {
     ctx.fillStyle = color;
@@ -125,8 +127,11 @@ function reiniciar(){
 
 function reinicioTiempo(){
     clearInterval(temporizador);
-    tiempo = 15;
+    tiempo = tiempoInicial;
+    tiempoInicial=tiempoInicial-1;
     mostrarEnSpan("puntos", puntaje);
     mostrarEnSpan("tiempo", tiempo);
     temporizador = setInterval(restarTiempo, 1000);
 }
+
+
